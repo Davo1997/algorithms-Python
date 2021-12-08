@@ -1,3 +1,9 @@
+"""
+This is a function, where you set the starting destination and final
+destination of the chess horse and the function returns square by square
+your steps, which is the shortest path to reach to the end...
+"""
+
 from collections import deque
 
 
