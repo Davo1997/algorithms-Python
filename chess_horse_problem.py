@@ -8,28 +8,25 @@ from collections import deque
 
 
 def chess_horse_move(start, end):
-    """This is a function that outputs the
-    shortest path of the horse in chess from
-    start square to end square..."""
+    # outputs the shortest path of the horse in chess from start square to end square...
 
-    N = 64  # number of squares
-    letters = "abcdefjh"
+    N = 64 # number of squares
+    letters = "abcdefgh"
     numbers = "12345678"
 
-    """Creating graph...with keys a1, b1, e6 etc."""
+    # Creating graph...with keys a1, b1, e6 etc.
 
     graph = dict()
     for l in letters:
         for n in numbers:
             graph[l + n] = set()
 
+    # add edges to graph (edges will be the direction of horse)
     def add_edge(v1, v2):
-        """A function for adding edges to graph (edges will be
-        the direction of horse)"""
         graph[v1].add(v2)
         graph[v2].add(v1)
 
-    """Looping in the 64 squares and creating first vertexes...second is empty"""
+    # Looping in the 64 squares and creating first vertexes...second is empty
 
     for i in range(8):
         for j in range(8):
